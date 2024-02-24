@@ -1,12 +1,27 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+
+
 
 const Register = () => {
+
+    const { createUser } = useContext(AuthContext);
+
     const register = e =>{
         e.preventDefault();
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(name, email, password)
+        console.log(name, email, password);
+        // GG
+        createUser(email, password)
+        .then(result=>{
+            console.log(result.user);
+        })
+        .catch(error =>{
+            console.error(error);
+        })
     }
   return (
     <div className="hero  min-h-screen bg-base-200">
