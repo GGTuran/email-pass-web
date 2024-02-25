@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 
 const Login = () => {
-    const login = e =>{
-        e.preventDefault();
-        const email = e.target.email.value;
-        const password = e.target.password.value;
-        console.log(email, password)
-    }
+    const Login = () => {
+        const login = e =>{
+            e.preventDefault();
+            const email = e.target.email.value;
+            const password = e.target.password.value;
+            console.log(email, password)
+        }
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
